@@ -21,8 +21,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Interaction Subsystem")
 	void BroadcastInteractionStarted(TScriptInterface<IInteractable> Interactable, AActor* Instigator);
 
-	UFUNCTION(BlueprintCallable, Category = "Interaction Subsystem")
+	UFUNCTION(BlueprintCallable, Category = "Interaction Subsystem", DisplayName="Broadcast Interaction Completed")
 	void BroadcastInteractionStopped(TScriptInterface<IInteractable> Interactable, AActor* Instigator);
+
+	UFUNCTION(BlueprintCallable, Category = InteractionSubsystem)
+	void BroadcastInteractionAborted(TScriptInterface<IInteractable> Interactable, AActor* Instigator);
 
 public:
 	UPROPERTY(BlueprintAssignable, Category = "Interaction Subsystem")
@@ -30,4 +33,8 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category = "Interaction Subsystem")
 	FOnInteractionDelegate OnInteractionStopped;
+
+
+	UPROPERTY(BlueprintAssignable, Category = "Interaction Subsystem")
+	FOnInteractionDelegate OnInteractionAborted;
 };

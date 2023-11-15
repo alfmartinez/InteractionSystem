@@ -12,3 +12,9 @@ void UInteractionSubsystem::BroadcastInteractionStopped(TScriptInterface<IIntera
 {
 	OnInteractionStopped.Broadcast(Interactable, Instigator);
 }
+
+void UInteractionSubsystem::BroadcastInteractionAborted(TScriptInterface<IInteractable> Interactable, AActor* Instigator)
+{
+	OnInteractionAborted.Broadcast(Interactable, Instigator);
+
+}

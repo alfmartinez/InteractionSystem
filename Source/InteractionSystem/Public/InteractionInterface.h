@@ -18,8 +18,11 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Interactable")
 	void StartInteraction(AActor* Instigator);
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Interactable")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Interactable", DisplayName="Complete Interaction")
 	void StopInteraction(AActor* Instigator);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = Interactable)
+	void AbortInteraction(AActor* Instigator);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Interactable")
 	void Activate();
